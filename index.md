@@ -5,7 +5,7 @@ data:
     pages:
     - icon: ':heavy_check_mark:'
       path: data-structure/union-find.cpp
-      title: data-structure/union-find.cpp
+      title: Union-Find
   verificationCategories:
   - name: test
     pages:

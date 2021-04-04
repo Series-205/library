@@ -38,8 +38,7 @@ data:
   - test/aoj-DLS-1-a.test.cpp
 documentation_of: data-structure/union-find.cpp
 layout: document
-redirect_from:
-- /library/data-structure/union-find.cpp
-- /library/data-structure/union-find.cpp.html
-title: data-structure/union-find.cpp
+title: Union-Find
 ---
+
+あかさたな
