@@ -1,8 +1,9 @@
 #pragma once
-#include <vector>
+#include <bits/stdc++.h>
+using namespace std;
 
 struct UnionFind {
-    std::vector<int> data;
+    vector<int> data;
 
     UnionFind() = default;
 
@@ -12,7 +13,7 @@ struct UnionFind {
         x = find(x);
         y = find(y);
         if(x == y) return false;
-        if(data[x] > data[y]) std::swap(x, y);
+        if(data[x] > data[y]) swap(x, y);
         data[x] += data[y];
         data[y] = x;
         return true;
