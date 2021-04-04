@@ -1,16 +1,16 @@
 ---
 data:
   libraryCategories:
-  - name: .
+  - name: data-structure
     pages:
     - icon: ':heavy_check_mark:'
-      path: union-find.cpp
-      title: union-find.cpp
+      path: data-structure/union-find.cpp
+      title: data-structure/union-find.cpp
   verificationCategories:
-  - name: .
+  - name: test
     pages:
     - icon: ':heavy_check_mark:'
-      path: aoj-DLS-1-a.test.cpp
-      title: aoj-DLS-1-a.test.cpp
+      path: test/aoj-DLS-1-a.test.cpp
+      title: test/aoj-DLS-1-a.test.cpp
 layout: toppage
 ---
