@@ -14,22 +14,15 @@ data:
     PROBLEM: https://onlinejudge.u-aizu.ac.jp/courses/library/3/DSL/2/DSL_2_B
     links:
     - https://onlinejudge.u-aizu.ac.jp/courses/library/3/DSL/2/DSL_2_B
-  bundledCode: "#line 1 \"test/AOJ-DLS-2-B.test.cpp\"\n#define PROBLEM \"https://onlinejudge.u-aizu.ac.jp/courses/library/3/DSL/2/DSL_2_B\"\
-    \n\n#include <bits/stdc++.h>\nusing namespace std;\n\n#line 2 \"segtree/fenwick-tree.cpp\"\
-    \n\n#line 4 \"segtree/fenwick-tree.cpp\"\nusing namespace std;\n\ntemplate <typename\
-    \ T>\nclass FenwickTree {\nprivate:\n    int _n;\n    vector<T> data;\n\n    T\
-    \ sum(int r) {\n        T s = 0;\n        while(r > 0) {\n            s += data[r\
-    \ - 1];\n            r -= r & -r;\n        }\n        return s;\n    }\n\npublic:\n\
-    \    FenwickTree() = default;\n    explicit FenwickTree(int n) : _n(n), data(n)\
-    \ {}\n\n    void add(int p, T x) {\n        assert(0 <= p && p < _n);\n      \
-    \  p++;\n        while(p <= _n) {\n            data[p - 1] += x;\n           \
-    \ p += p & -p;\n        }\n    }\n\n    T sum(int l, int r) {\n        assert(0\
-    \ <= l && l <= r && r <= _n);\n        return sum(r) - sum(l);\n    }\n};\n#line\
-    \ 7 \"test/AOJ-DLS-2-B.test.cpp\"\n\nint main() {\n    int n, q;\n    cin >> n\
-    \ >> q;\n\n    FenwickTree<int> bit(n);\n\n    for(int i = 0; i < q; i++) {\n\
-    \        int c, x, y;\n        cin >> c >> x >> y;\n        if(c)\n          \
-    \  cout << bit.sum(x - 1, y) << \"\\n\";\n        else\n            bit.add(x\
-    \ - 1, y);\n    }\n}\n"
+  bundledCode: "Traceback (most recent call last):\n  File \"/opt/hostedtoolcache/Python/3.9.2/x64/lib/python3.9/site-packages/onlinejudge_verify/documentation/build.py\"\
+    , line 71, in _render_source_code_stat\n    bundled_code = language.bundle(stat.path,\
+    \ basedir=basedir, options={'include_paths': [basedir]}).decode()\n  File \"/opt/hostedtoolcache/Python/3.9.2/x64/lib/python3.9/site-packages/onlinejudge_verify/languages/cplusplus.py\"\
+    , line 187, in bundle\n    bundler.update(path)\n  File \"/opt/hostedtoolcache/Python/3.9.2/x64/lib/python3.9/site-packages/onlinejudge_verify/languages/cplusplus_bundle.py\"\
+    , line 401, in update\n    self.update(self._resolve(pathlib.Path(included), included_from=path))\n\
+    \  File \"/opt/hostedtoolcache/Python/3.9.2/x64/lib/python3.9/site-packages/onlinejudge_verify/languages/cplusplus_bundle.py\"\
+    , line 312, in update\n    raise BundleErrorAt(path, i + 1, \"#pragma once found\
+    \ in a non-first line\")\nonlinejudge_verify.languages.cplusplus_bundle.BundleErrorAt:\
+    \ segtree/fenwick-tree.cpp: line 5: #pragma once found in a non-first line\n"
   code: "#define PROBLEM \"https://onlinejudge.u-aizu.ac.jp/courses/library/3/DSL/2/DSL_2_B\"\
     \n\n#include <bits/stdc++.h>\nusing namespace std;\n\n#include \"../segtree/fenwick-tree.cpp\"\
     \n\nint main() {\n    int n, q;\n    cin >> n >> q;\n\n    FenwickTree<int> bit(n);\n\
@@ -41,7 +34,7 @@ data:
   isVerificationFile: true
   path: test/AOJ-DLS-2-B.test.cpp
   requiredBy: []
-  timestamp: '2021-04-05 19:19:22+09:00'
+  timestamp: '2021-04-05 20:06:55+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/AOJ-DLS-2-B.test.cpp
