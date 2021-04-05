@@ -4,6 +4,9 @@ data:
   - name: data-structure
     pages:
     - icon: ':heavy_check_mark:'
+      path: data-structure/fenwick-tree.cpp
+      title: Fenwick-Tree
+    - icon: ':heavy_check_mark:'
       path: data-structure/segment-tree.cpp
       title: Segment-Tree
     - icon: ':heavy_check_mark:'
@@ -18,5 +21,8 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/AOJ-DLS-2-A.test.cpp
       title: test/AOJ-DLS-2-A.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: test/AOJ-DLS-2-B.test.cpp
+      title: test/AOJ-DLS-2-B.test.cpp
 layout: toppage
 ---
