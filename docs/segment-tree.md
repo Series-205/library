@@ -6,3 +6,15 @@ documentation_of: ../data-structure/segment-tree.cpp
 ## 説明
 
 モノイドについて区間に対する演算が出来るデータ構造
+
+AC Library を参照のこと
+
+TODO: 自分で書く
+
+## 計算量
+
+以下、モノイドの演算の時間計算量を $O(1)$ と仮定する。
+
+- `SegmentTree(N)`: $O(N)$
+- `get(p), all_prod()`: $O(1)$
+- 他クエリ: $O(\log N)$

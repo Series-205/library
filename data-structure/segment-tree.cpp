@@ -47,4 +47,6 @@ public:
         }
         return op(sl, sr);
     }
+
+    S all_prod() { return data[1]; }
 };
