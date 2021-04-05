@@ -1,3 +1,7 @@
+/*
+ * @brief Fenwick-Tree
+ * @docs docs/fenwick-tree.md
+ */
 #pragma once
 
 #include <bits/stdc++.h>

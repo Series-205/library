@@ -1,8 +1,3 @@
----
-title: Fenwick-Tree
-documentation_of: ../segtree/fenwick-tree.cpp
----
-
 ## 説明
 
 長さ $N$ の配列を管理するデータ構造

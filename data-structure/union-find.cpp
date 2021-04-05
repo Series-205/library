@@ -1,3 +1,7 @@
+/*
+ * @brief Union-Find
+ * @docs docs/union-find.md
+ */
 #pragma once
 #include <bits/stdc++.h>
 using namespace std;

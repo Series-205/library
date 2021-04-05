@@ -1,8 +1,3 @@
----
-title: Union-Find
-documentation_of: ../data-structure/union-find.cpp
----
-
 ## 説明
 
 集合を扱うデータ構造

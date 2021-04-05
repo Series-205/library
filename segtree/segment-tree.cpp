@@ -1,3 +1,7 @@
+/*
+ * @brief Segment-Tree
+ * @docs docs/segment-tree.md
+ */
 #pragma once
 #include <bits/stdc++.h>
 using namespace std;
