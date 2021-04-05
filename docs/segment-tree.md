@@ -15,6 +15,6 @@ TODO: 自分で書く
 
 以下、モノイドの演算の時間計算量を $O(1)$ と仮定する。
 
-- `SegmentTree(N)`: $O(N)$
-- `get(p), all_prod()`: $O(1)$
+- `SegmentTree(n)`: $O(n)$
+- `get(p),all_prod()`: $O(1)$
 - 他クエリ: $O(\log N)$
