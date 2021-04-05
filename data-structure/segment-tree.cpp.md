@@ -27,7 +27,8 @@ data:
     \ && r <= _n);\n        S sl = e(), sr = e();\n        l += sz;\n        r +=\
     \ sz;\n        while(l < r) {\n            if(l & 1) sl = op(sl, data[l++]);\n\
     \            if(r & 1) sr = op(data[--r], sr);\n            l >>= 1;\n       \
-    \     r >>= 1;\n        }\n        return op(sl, sr);\n    }\n};\n"
+    \     r >>= 1;\n        }\n        return op(sl, sr);\n    }\n\n    S all_prod()\
+    \ { return data[1]; }\n};\n"
   code: "#pragma once\n#include <bits/stdc++.h>\nusing namespace std;\n\n// \u30E2\
     \u30CE\u30A4\u30C9, \u6F14\u7B97, \u5358\u4F4D\u5143\ntemplate <typename S, S\
     \ (*op)(S, S), S (*e)()>\nclass SegmentTree {\nprivate:\n    int _n, sz;\n   \
@@ -44,12 +45,13 @@ data:
     \      S sl = e(), sr = e();\n        l += sz;\n        r += sz;\n        while(l\
     \ < r) {\n            if(l & 1) sl = op(sl, data[l++]);\n            if(r & 1)\
     \ sr = op(data[--r], sr);\n            l >>= 1;\n            r >>= 1;\n      \
-    \  }\n        return op(sl, sr);\n    }\n};"
+    \  }\n        return op(sl, sr);\n    }\n\n    S all_prod() { return data[1];\
+    \ }\n};"
   dependsOn: []
   isVerificationFile: false
   path: data-structure/segment-tree.cpp
   requiredBy: []
-  timestamp: '2021-04-05 17:37:29+09:00'
+  timestamp: '2021-04-05 18:32:39+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/AOJ-DLS-2-A.test.cpp
@@ -61,3 +63,15 @@ title: Segment-Tree
 ## 説明
 
 モノイドについて区間に対する演算が出来るデータ構造
+
+AC Library を参照のこと
+
+TODO: 自分で書く
+
+## 計算量
+
+以下、モノイドの演算の時間計算量を $O(1)$ と仮定する。
+
+- `SegmentTree(N)`: $O(N)$
+- `get(p), all_prod()`: $O(1)$
+- 他クエリ: $O(\log N)$

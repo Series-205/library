@@ -31,13 +31,13 @@ data:
     \ && r <= _n);\n        S sl = e(), sr = e();\n        l += sz;\n        r +=\
     \ sz;\n        while(l < r) {\n            if(l & 1) sl = op(sl, data[l++]);\n\
     \            if(r & 1) sr = op(data[--r], sr);\n            l >>= 1;\n       \
-    \     r >>= 1;\n        }\n        return op(sl, sr);\n    }\n};\n#line 7 \"test/AOJ-DLS-2-A.test.cpp\"\
-    \n\nint op(int a, int b) { return min(a, b); }\nint e() { return (1LL << 31) -\
-    \ 1; }\n\nint main() {\n    int n, q;\n    cin >> n >> q;\n\n    SegmentTree<int,\
-    \ op, e> seg(n);\n\n    for(int i = 0; i < q; i++) {\n        int c, x, y;\n \
-    \       cin >> c >> x >> y;\n        if(c)\n            cout << seg.prod(x, y\
-    \ + 1) << \"\\n\";\n        else\n            seg.set(x, y);\n    }\n\n    return\
-    \ 0;\n}\n"
+    \     r >>= 1;\n        }\n        return op(sl, sr);\n    }\n\n    S all_prod()\
+    \ { return data[1]; }\n};\n#line 7 \"test/AOJ-DLS-2-A.test.cpp\"\n\nint op(int\
+    \ a, int b) { return min(a, b); }\nint e() { return (1LL << 31) - 1; }\n\nint\
+    \ main() {\n    int n, q;\n    cin >> n >> q;\n\n    SegmentTree<int, op, e> seg(n);\n\
+    \n    for(int i = 0; i < q; i++) {\n        int c, x, y;\n        cin >> c >>\
+    \ x >> y;\n        if(c)\n            cout << seg.prod(x, y + 1) << \"\\n\";\n\
+    \        else\n            seg.set(x, y);\n    }\n\n    return 0;\n}\n"
   code: "#define PROBLEM \"https://onlinejudge.u-aizu.ac.jp/courses/library/3/DSL/2/DSL_2_A\"\
     \n\n#include <bits/stdc++.h>\nusing namespace std;\n\n#include \"../data-structure/segment-tree.cpp\"\
     \n\nint op(int a, int b) { return min(a, b); }\nint e() { return (1LL << 31) -\
@@ -51,7 +51,7 @@ data:
   isVerificationFile: true
   path: test/AOJ-DLS-2-A.test.cpp
   requiredBy: []
-  timestamp: '2021-04-05 17:37:29+09:00'
+  timestamp: '2021-04-05 18:32:39+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/AOJ-DLS-2-A.test.cpp
