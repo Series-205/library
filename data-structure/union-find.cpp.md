@@ -1,14 +1,14 @@
 ---
 data:
   _extendedDependsOn: []
-  _extendedRequiredBy:
-  - icon: ':warning:'
-    path: test/AOJ-DLS-1-A.cpp
-    title: test/AOJ-DLS-1-A.cpp
-  _extendedVerifiedWith: []
+  _extendedRequiredBy: []
+  _extendedVerifiedWith:
+  - icon: ':heavy_check_mark:'
+    path: test/AOJ-DLS-1-A.test.cpp
+    title: test/AOJ-DLS-1-A.test.cpp
   _isVerificationFailed: false
   _pathExtension: cpp
-  _verificationStatusIcon: ':warning:'
+  _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
     links: []
   bundledCode: "#line 2 \"data-structure/union-find.cpp\"\n#include <bits/stdc++.h>\n\
@@ -31,11 +31,11 @@ data:
   dependsOn: []
   isVerificationFile: false
   path: data-structure/union-find.cpp
-  requiredBy:
-  - test/AOJ-DLS-1-A.cpp
+  requiredBy: []
   timestamp: '2021-04-04 22:46:48+09:00'
-  verificationStatus: LIBRARY_NO_TESTS
-  verifiedWith: []
+  verificationStatus: LIBRARY_ALL_AC
+  verifiedWith:
+  - test/AOJ-DLS-1-A.test.cpp
 documentation_of: data-structure/union-find.cpp
 layout: document
 title: Union-Find
