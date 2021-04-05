@@ -20,7 +20,7 @@ private:
 
 public:
     FenwickTree() = default;
-    FenwickTree(int n) : _n(n), data(n) {}
+    explicit FenwickTree(int n) : _n(n), data(n) {}
 
     void add(int p, T x) {
         assert(0 <= p && p < _n);

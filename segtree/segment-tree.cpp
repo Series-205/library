@@ -13,8 +13,8 @@ private:
 
 public:
     SegmentTree() = default;
-    SegmentTree(int n) : SegmentTree(vector<S>(n, e())) {}
-    SegmentTree(const vector<S>& v) : _n(v.size()) {
+    explicit SegmentTree(int n) : SegmentTree(vector<S>(n, e())) {}
+    explicit SegmentTree(const vector<S>& v) : _n(v.size()) {
         sz = 1;
         while(sz < _n) sz <<= 1;
         data.assign(sz << 1, e());

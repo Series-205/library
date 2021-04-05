@@ -1,6 +1,6 @@
 ---
 title: Fenwick-Tree
-documentation_of: ../data-structure/fenwick-tree.cpp
+documentation_of: ../segtree/fenwick-tree.cpp
 ---
 
 ## 説明

@@ -1,6 +1,6 @@
 ---
 title: Segment-Tree
-documentation_of: ../data-structure/segment-tree.cpp
+documentation_of: ../segtree/segment-tree.cpp
 ---
 
 ## 説明

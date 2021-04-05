@@ -3,7 +3,7 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-#include "../data-structure/segment-tree.cpp"
+#include "../segtree/segment-tree.cpp"
 
 int op(int a, int b) { return min(a, b); }
 int e() { return (1LL << 31) - 1; }
