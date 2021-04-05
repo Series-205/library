@@ -11,3 +11,7 @@ documentation_of: ../data-structure/union-find.cpp
 - `find(x)`: 要素 `x` が属する集合を求める。
 - `size(x)`: 要素 `x` が属する集合の要素数を求める。
 - `same(x, y)`: 要素 `x,y` が同じ集合に属するか判定する。
+
+## 計算量
+
+- クエリ: 平均 $O(\alpha(N))$
