@@ -26,8 +26,5 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/AOJ-DLS-2-B.test.cpp
       title: test/AOJ-DLS-2-B.test.cpp
-    - icon: ':x:'
-      path: test/AOJ-DLS-2-E.test.cpp
-      title: test/AOJ-DLS-2-E.test.cpp
 layout: toppage
 ---
