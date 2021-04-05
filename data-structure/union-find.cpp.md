@@ -1,14 +1,14 @@
 ---
 data:
   _extendedDependsOn: []
-  _extendedRequiredBy: []
-  _extendedVerifiedWith:
-  - icon: ':heavy_check_mark:'
-    path: test/aoj-DLS-1-a.test.cpp
-    title: test/aoj-DLS-1-a.test.cpp
+  _extendedRequiredBy:
+  - icon: ':warning:'
+    path: test/AOJ-DLS-1-A.cpp
+    title: test/AOJ-DLS-1-A.cpp
+  _extendedVerifiedWith: []
   _isVerificationFailed: false
   _pathExtension: cpp
-  _verificationStatusIcon: ':heavy_check_mark:'
+  _verificationStatusIcon: ':warning:'
   attributes:
     links: []
   bundledCode: "#line 2 \"data-structure/union-find.cpp\"\n#include <bits/stdc++.h>\n\
@@ -31,11 +31,11 @@ data:
   dependsOn: []
   isVerificationFile: false
   path: data-structure/union-find.cpp
-  requiredBy: []
+  requiredBy:
+  - test/AOJ-DLS-1-A.cpp
   timestamp: '2021-04-04 22:46:48+09:00'
-  verificationStatus: LIBRARY_ALL_AC
-  verifiedWith:
-  - test/aoj-DLS-1-a.test.cpp
+  verificationStatus: LIBRARY_NO_TESTS
+  verifiedWith: []
 documentation_of: data-structure/union-find.cpp
 layout: document
 title: Union-Find
@@ -49,3 +49,7 @@ title: Union-Find
 - `find(x)`: 要素 `x` が属する集合を求める。
 - `size(x)`: 要素 `x` が属する集合の要素数を求める。
 - `same(x, y)`: 要素 `x,y` が同じ集合に属するか判定する。
+
+## 計算量
+
+- クエリ: 平均 $O(\alpha(N))$
