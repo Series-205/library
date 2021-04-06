@@ -67,4 +67,4 @@ TODO: 自分で書く
 
 - `SegmentTree(n)`: $O(n)$
 - `get(p),all_prod()`: $O(1)$
-- 他クエリ: $O(\log N)$
+- 他クエリ: $O(\log n)$
