@@ -11,6 +11,9 @@ data:
     - icon: ':heavy_check_mark:'
       path: segtree/fenwick-tree.cpp
       title: Fenwick-Tree
+    - icon: ':warning:'
+      path: segtree/lazy-segment-tree.cpp
+      title: segtree/lazy-segment-tree.cpp
     - icon: ':heavy_check_mark:'
       path: segtree/segment-tree.cpp
       title: Segment-Tree
@@ -32,5 +35,8 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/yosupo-point-add-range-sum.test.cpp
       title: test/yosupo-point-add-range-sum.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: test/yosupo-point-set-range-composite.test.cpp
+      title: test/yosupo-point-set-range-composite.test.cpp
 layout: toppage
 ---

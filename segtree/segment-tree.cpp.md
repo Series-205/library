@@ -6,6 +6,9 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/AOJ-DLS-2-A.test.cpp
     title: test/AOJ-DLS-2-A.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/yosupo-point-set-range-composite.test.cpp
+    title: test/yosupo-point-set-range-composite.test.cpp
   _isVerificationFailed: false
   _pathExtension: cpp
   _verificationStatusIcon: ':heavy_check_mark:'
@@ -58,6 +61,7 @@ data:
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/AOJ-DLS-2-A.test.cpp
+  - test/yosupo-point-set-range-composite.test.cpp
 documentation_of: segtree/segment-tree.cpp
 layout: document
 redirect_from:
