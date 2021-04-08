@@ -26,5 +26,8 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/AOJ-DLS-2-B.test.cpp
       title: test/AOJ-DLS-2-B.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: test/yosupo-Unionfind.test.cpp
+      title: test/yosupo-Unionfind.test.cpp
 layout: toppage
 ---
