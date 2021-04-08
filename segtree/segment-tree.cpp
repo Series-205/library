@@ -1,7 +1,3 @@
-/*
- * @brief Segment-Tree
- * @docs docs/segment-tree.md
- */
 #pragma once
 #include <bits/stdc++.h>
 using namespace std;
@@ -54,3 +50,7 @@ public:
 
     S all_prod() { return data[1]; }
 };
+/*
+ * @brief Segment-Tree
+ * @docs docs/segment-tree.md
+ */

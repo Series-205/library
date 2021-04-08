@@ -1,7 +1,3 @@
-/*
- * @brief Union-Find
- * @docs docs/union-find.md
- */
 #pragma once
 #include <bits/stdc++.h>
 using namespace std;
@@ -29,3 +25,7 @@ struct UnionFind {
 
     bool same(int x, int y) { return find(x) == find(y); }
 };
+/*
+ * @brief Union-Find
+ * @docs docs/union-find.md
+ */
