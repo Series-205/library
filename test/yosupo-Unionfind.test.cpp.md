@@ -14,15 +14,21 @@ data:
     PROBLEM: https://judge.yosupo.jp/problem/unionfind
     links:
     - https://judge.yosupo.jp/problem/unionfind
-  bundledCode: "Traceback (most recent call last):\n  File \"/opt/hostedtoolcache/Python/3.9.4/x64/lib/python3.9/site-packages/onlinejudge_verify/documentation/build.py\"\
-    , line 71, in _render_source_code_stat\n    bundled_code = language.bundle(stat.path,\
-    \ basedir=basedir, options={'include_paths': [basedir]}).decode()\n  File \"/opt/hostedtoolcache/Python/3.9.4/x64/lib/python3.9/site-packages/onlinejudge_verify/languages/cplusplus.py\"\
-    , line 187, in bundle\n    bundler.update(path)\n  File \"/opt/hostedtoolcache/Python/3.9.4/x64/lib/python3.9/site-packages/onlinejudge_verify/languages/cplusplus_bundle.py\"\
-    , line 401, in update\n    self.update(self._resolve(pathlib.Path(included), included_from=path))\n\
-    \  File \"/opt/hostedtoolcache/Python/3.9.4/x64/lib/python3.9/site-packages/onlinejudge_verify/languages/cplusplus_bundle.py\"\
-    , line 312, in update\n    raise BundleErrorAt(path, i + 1, \"#pragma once found\
-    \ in a non-first line\")\nonlinejudge_verify.languages.cplusplus_bundle.BundleErrorAt:\
-    \ data-structure/union-find.cpp: line 5: #pragma once found in a non-first line\n"
+  bundledCode: "#line 1 \"test/yosupo-Unionfind.test.cpp\"\n#define PROBLEM \"https://judge.yosupo.jp/problem/unionfind\"\
+    \n\n#include <bits/stdc++.h>\nusing namespace std;\n\n#line 3 \"data-structure/union-find.cpp\"\
+    \nusing namespace std;\n\nstruct UnionFind {\n    vector<int> data;\n\n    UnionFind()\
+    \ = default;\n\n    explicit UnionFind(size_t sz) : data(sz, -1) {}\n\n    bool\
+    \ unite(int x, int y) {\n        x = find(x);\n        y = find(y);\n        if(x\
+    \ == y) return false;\n        if(data[x] > data[y]) swap(x, y);\n        data[x]\
+    \ += data[y];\n        data[y] = x;\n        return true;\n    }\n\n    int find(int\
+    \ x) { return data[x] < 0 ? x : data[x] = find(data[x]); }\n\n    int size(int\
+    \ x) { return -data[x]; }\n\n    bool same(int x, int y) { return find(x) == find(y);\
+    \ }\n};\n/*\n * @brief Union-Find\n * @docs docs/union-find.md\n */\n#line 7 \"\
+    test/yosupo-Unionfind.test.cpp\"\n\nint main() {\n    cin.tie(nullptr);\n    ios::sync_with_stdio(false);\n\
+    \n    int n, q;\n    cin >> n >> q;\n    UnionFind uf(n);\n\n    for(int i = 0;\
+    \ i < q; i++) {\n        int t, u, v;\n        cin >> t >> u >> v;\n        if(t)\n\
+    \            cout << uf.same(u, v) << \"\\n\";\n        else\n            uf.unite(u,\
+    \ v);\n    }\n\n    return 0;\n}\n"
   code: "#define PROBLEM \"https://judge.yosupo.jp/problem/unionfind\"\n\n#include\
     \ <bits/stdc++.h>\nusing namespace std;\n\n#include \"../data-structure/union-find.cpp\"\
     \n\nint main() {\n    cin.tie(nullptr);\n    ios::sync_with_stdio(false);\n\n\
@@ -35,7 +41,7 @@ data:
   isVerificationFile: true
   path: test/yosupo-Unionfind.test.cpp
   requiredBy: []
-  timestamp: '2021-04-08 19:19:55+09:00'
+  timestamp: '2021-04-08 19:35:44+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/yosupo-Unionfind.test.cpp

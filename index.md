@@ -29,5 +29,8 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/yosupo-Unionfind.test.cpp
       title: test/yosupo-Unionfind.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: test/yosupo-point-add-range-sum.test.cpp
+      title: test/yosupo-point-add-range-sum.test.cpp
 layout: toppage
 ---
