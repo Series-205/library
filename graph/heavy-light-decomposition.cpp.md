@@ -4,6 +4,9 @@ data:
   _extendedRequiredBy: []
   _extendedVerifiedWith:
   - icon: ':heavy_check_mark:'
+    path: test/yosupo-lowest-common-ancestor.test.cpp
+    title: test/yosupo-lowest-common-ancestor.test.cpp
+  - icon: ':heavy_check_mark:'
     path: test/yosupo-vertex-add-path-sum.test.cpp
     title: test/yosupo-vertex-add-path-sum.test.cpp
   - icon: ':heavy_check_mark:'
@@ -82,6 +85,7 @@ data:
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/yosupo-vertex-add-subtree-sum.test.cpp
+  - test/yosupo-lowest-common-ancestor.test.cpp
   - test/yosupo-vertex-add-path-sum.test.cpp
 documentation_of: graph/heavy-light-decomposition.cpp
 layout: document
