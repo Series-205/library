@@ -3,7 +3,7 @@ data:
   _extendedDependsOn:
   - icon: ':heavy_check_mark:'
     path: segtree/lazy-segment-tree.cpp
-    title: segtree/lazy-segment-tree.cpp
+    title: Lazy-Segment-Tree
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
   _isVerificationFailed: false
@@ -53,11 +53,12 @@ data:
     \            r >>= 1;\n            }\n            l = _l;\n            r = _r;\n\
     \        }\n\n        for(int i = 1; i <= lg; i++) {\n            if(((l >> i)\
     \ << i) != l) calc(l >> i);\n            if(((r >> i) << i) != r) calc((r - 1)\
-    \ >> i);\n        }\n    }\n};\n#line 8 \"test/AOJ-DLS-2-G.test.cpp\"\n\nstruct\
-    \ S {\n    int64_t val;\n    int sz;\n};\nS op(S l, S r) { return S{l.val + r.val,\
-    \ l.sz + r.sz}; }\nS e() { return S{0, 0}; }\n\nusing F = int64_t;\nS mapping(F\
-    \ f, S s) { return S{s.val + f * s.sz, s.sz}; }\nF composition(F f, F g) { return\
-    \ f + g; }\nF id() { return 0; }\n\nint main() {\n    cin.tie(nullptr);\n    ios::sync_with_stdio(false);\n\
+    \ >> i);\n        }\n    }\n};\n/*\n * @brief Lazy-Segment-Tree\n * @docs docs/lazy-segment-tree.md\n\
+    \ */\n#line 8 \"test/AOJ-DLS-2-G.test.cpp\"\n\nstruct S {\n    int64_t val;\n\
+    \    int sz;\n};\nS op(S l, S r) { return S{l.val + r.val, l.sz + r.sz}; }\nS\
+    \ e() { return S{0, 0}; }\n\nusing F = int64_t;\nS mapping(F f, S s) { return\
+    \ S{s.val + f * s.sz, s.sz}; }\nF composition(F f, F g) { return f + g; }\nF id()\
+    \ { return 0; }\n\nint main() {\n    cin.tie(nullptr);\n    ios::sync_with_stdio(false);\n\
     \n    int n, q;\n    cin >> n >> q;\n\n    LazySegmentTree<S, op, e, F, mapping,\
     \ composition, id> seg(\n        vector<S>(n, S{0, 1}));\n\n    for(int i = 0;\
     \ i < q; i++) {\n        int c;\n        cin >> c;\n        if(c) {\n        \
@@ -83,7 +84,7 @@ data:
   isVerificationFile: true
   path: test/AOJ-DLS-2-G.test.cpp
   requiredBy: []
-  timestamp: '2021-04-09 12:12:09+09:00'
+  timestamp: '2021-04-09 13:02:58+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/AOJ-DLS-2-G.test.cpp

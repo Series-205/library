@@ -3,7 +3,7 @@ data:
   _extendedDependsOn:
   - icon: ':heavy_check_mark:'
     path: segtree/lazy-segment-tree.cpp
-    title: segtree/lazy-segment-tree.cpp
+    title: Lazy-Segment-Tree
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
   _isVerificationFailed: false
@@ -53,17 +53,18 @@ data:
     \            r >>= 1;\n            }\n            l = _l;\n            r = _r;\n\
     \        }\n\n        for(int i = 1; i <= lg; i++) {\n            if(((l >> i)\
     \ << i) != l) calc(l >> i);\n            if(((r >> i) << i) != r) calc((r - 1)\
-    \ >> i);\n        }\n    }\n};\n#line 8 \"test/AOJ-DLS-2-F.test.cpp\"\n\nusing\
-    \ S = int;\nS op(S l, S r) { return min(l, r); }\nS e() { return (1LL << 31) -\
-    \ 1; }\n\nusing F = int;\nF id() { return -1; }\nS mapping(F f, S s) { return\
-    \ f == id() ? s : f; }\nF composition(F f, F g) { return f == id() ? g : f; }\n\
-    \nint main() {\n    cin.tie(nullptr);\n    ios::sync_with_stdio(false);\n\n  \
-    \  int n, q;\n    cin >> n >> q;\n\n    LazySegmentTree<S, op, e, F, mapping,\
-    \ composition, id> seg(n);\n\n    for(int i = 0; i < q; i++) {\n        int c;\n\
-    \        cin >> c;\n        if(c) {\n            int l, r;\n            cin >>\
-    \ l >> r;\n            cout << seg.prod(l, r + 1) << \"\\n\";\n        } else\
-    \ {\n            int l, r, x;\n            cin >> l >> r >> x;\n            seg.apply(l,\
-    \ r + 1, x);\n        }\n    }\n\n    return 0;\n}\n"
+    \ >> i);\n        }\n    }\n};\n/*\n * @brief Lazy-Segment-Tree\n * @docs docs/lazy-segment-tree.md\n\
+    \ */\n#line 8 \"test/AOJ-DLS-2-F.test.cpp\"\n\nusing S = int;\nS op(S l, S r)\
+    \ { return min(l, r); }\nS e() { return (1LL << 31) - 1; }\n\nusing F = int;\n\
+    F id() { return -1; }\nS mapping(F f, S s) { return f == id() ? s : f; }\nF composition(F\
+    \ f, F g) { return f == id() ? g : f; }\n\nint main() {\n    cin.tie(nullptr);\n\
+    \    ios::sync_with_stdio(false);\n\n    int n, q;\n    cin >> n >> q;\n\n   \
+    \ LazySegmentTree<S, op, e, F, mapping, composition, id> seg(n);\n\n    for(int\
+    \ i = 0; i < q; i++) {\n        int c;\n        cin >> c;\n        if(c) {\n \
+    \           int l, r;\n            cin >> l >> r;\n            cout << seg.prod(l,\
+    \ r + 1) << \"\\n\";\n        } else {\n            int l, r, x;\n           \
+    \ cin >> l >> r >> x;\n            seg.apply(l, r + 1, x);\n        }\n    }\n\
+    \n    return 0;\n}\n"
   code: "#define PROBLEM \\\n    \"https://onlinejudge.u-aizu.ac.jp/courses/library/3/DSL/2/DSL_2_F\"\
     \n\n#include <bits/stdc++.h>\nusing namespace std;\n\n#include \"../segtree/lazy-segment-tree.cpp\"\
     \n\nusing S = int;\nS op(S l, S r) { return min(l, r); }\nS e() { return (1LL\
@@ -81,7 +82,7 @@ data:
   isVerificationFile: true
   path: test/AOJ-DLS-2-F.test.cpp
   requiredBy: []
-  timestamp: '2021-04-09 12:12:09+09:00'
+  timestamp: '2021-04-09 13:02:58+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/AOJ-DLS-2-F.test.cpp

@@ -13,7 +13,7 @@ data:
       title: Fenwick-Tree
     - icon: ':heavy_check_mark:'
       path: segtree/lazy-segment-tree.cpp
-      title: segtree/lazy-segment-tree.cpp
+      title: Lazy-Segment-Tree
     - icon: ':heavy_check_mark:'
       path: segtree/segment-tree.cpp
       title: Segment-Tree

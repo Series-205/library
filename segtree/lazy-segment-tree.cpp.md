@@ -13,6 +13,8 @@ data:
   _pathExtension: cpp
   _verificationStatusIcon: ':heavy_check_mark:'
   attributes:
+    _deprecated_at_docs: docs/lazy-segment-tree.md
+    document_title: Lazy-Segment-Tree
     links: []
   bundledCode: "#line 2 \"segtree/lazy-segment-tree.cpp\"\n#include <bits/stdc++.h>\n\
     using namespace std;\n\ntemplate <class S, S (*op)(S, S), S (*e)(), class F, S\
@@ -51,7 +53,8 @@ data:
     \            r >>= 1;\n            }\n            l = _l;\n            r = _r;\n\
     \        }\n\n        for(int i = 1; i <= lg; i++) {\n            if(((l >> i)\
     \ << i) != l) calc(l >> i);\n            if(((r >> i) << i) != r) calc((r - 1)\
-    \ >> i);\n        }\n    }\n};\n"
+    \ >> i);\n        }\n    }\n};\n/*\n * @brief Lazy-Segment-Tree\n * @docs docs/lazy-segment-tree.md\n\
+    \ */\n"
   code: "#pragma once\n#include <bits/stdc++.h>\nusing namespace std;\n\ntemplate\
     \ <class S, S (*op)(S, S), S (*e)(), class F, S (*mapping)(F, S),\n          F\
     \ (*composition)(F, F), F (*id)()>\nclass LazySegmentTree {\nprivate:\n    int\
@@ -89,12 +92,12 @@ data:
     \         }\n            l = _l;\n            r = _r;\n        }\n\n        for(int\
     \ i = 1; i <= lg; i++) {\n            if(((l >> i) << i) != l) calc(l >> i);\n\
     \            if(((r >> i) << i) != r) calc((r - 1) >> i);\n        }\n    }\n\
-    };"
+    };\n/*\n * @brief Lazy-Segment-Tree\n * @docs docs/lazy-segment-tree.md\n */\n"
   dependsOn: []
   isVerificationFile: false
   path: segtree/lazy-segment-tree.cpp
   requiredBy: []
-  timestamp: '2021-04-09 12:12:09+09:00'
+  timestamp: '2021-04-09 13:02:58+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/AOJ-DLS-2-G.test.cpp
@@ -104,5 +107,14 @@ layout: document
 redirect_from:
 - /library/segtree/lazy-segment-tree.cpp
 - /library/segtree/lazy-segment-tree.cpp.html
-title: segtree/lazy-segment-tree.cpp
+title: Lazy-Segment-Tree
 ---
+## 説明
+
+TODO: 書く
+
+## 計算量
+
+- コンストラクタ: $O(n)$
+- `all_prod()`: $O(1)$
+- 他クエリ: $O(\log n)$
