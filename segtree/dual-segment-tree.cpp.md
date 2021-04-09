@@ -78,10 +78,6 @@ redirect_from:
 - /library/segtree/dual-segment-tree.cpp.html
 title: Dual-Segment-Tree
 ---
-## TODO
-
-交換則が成り立たなくても OK なようにする
-
 ## 説明
 
 双対セグ木
