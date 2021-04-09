@@ -6,6 +6,11 @@ data:
     - icon: ':heavy_check_mark:'
       path: data-structure/union-find.cpp
       title: Union-Find
+  - name: graph
+    pages:
+    - icon: ':heavy_check_mark:'
+      path: graph/heavy-light-decomposition.cpp
+      title: Heavy-Light-Decomposition
   - name: segtree
     pages:
     - icon: ':heavy_check_mark:'
@@ -53,5 +58,8 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/yosupo-range-affine-range-sum.test.cpp
       title: test/yosupo-range-affine-range-sum.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: test/yosupo-vertex-add-path-sum.test.cpp
+      title: test/yosupo-vertex-add-path-sum.test.cpp
 layout: toppage
 ---

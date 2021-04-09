@@ -9,6 +9,9 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/yosupo-point-set-range-composite.test.cpp
     title: test/yosupo-point-set-range-composite.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/yosupo-vertex-add-path-sum.test.cpp
+    title: test/yosupo-vertex-add-path-sum.test.cpp
   _isVerificationFailed: false
   _pathExtension: cpp
   _verificationStatusIcon: ':heavy_check_mark:'
@@ -60,6 +63,7 @@ data:
   timestamp: '2021-04-08 19:35:44+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
+  - test/yosupo-vertex-add-path-sum.test.cpp
   - test/AOJ-DLS-2-A.test.cpp
   - test/yosupo-point-set-range-composite.test.cpp
 documentation_of: segtree/segment-tree.cpp
