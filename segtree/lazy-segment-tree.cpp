@@ -13,7 +13,7 @@ private:
     void calc(int k) { data[k] = op(data[k << 1], data[k << 1 | 1]); }
     void all_apply(int k, F f) {
         data[k] = mapping(f, data[k]);
-        if(k < sz) lazy[k] = compopsition(f, lazy[k]);
+        if(k < sz) lazy[k] = composition(f, lazy[k]);
     }
     void push(int k) {
         all_apply(k << 1, lazy[k]);
@@ -26,7 +26,7 @@ public:
     explicit LazySegmentTree(int n) : LazySegmentTree(vector<S>(n, e())) {}
     explicit LazySegmentTree(const vector<S>& v) : _n(v.size()) {
         lg = 0;
-        while((1U << log) < (uint)_n) lg++;
+        while((1U << lg) < (uint)_n) lg++;
         sz = 1 << lg;
         data.assign(sz << 1, e());
         lazy.assign(sz, id());
@@ -55,16 +55,9 @@ public:
         l += sz;
         r += sz;
 
-        int i = lg;
-        while(((l >> i) << i) != l) {
-            push(l >> i);
-            i--;
-        }
-        int j = lg;
-        while(((l ^ r) >> j) == 0) j--;
-        while(((r >> j) << j) != r) {
-            push(r >> j);
-            j--;
+        for(int i = lg; i >= 1; i--) {
+            if(((l >> i) << i) != l) push(l >> i);
+            if(((r >> i) << i) != r) push(r >> i);
         }
 
         S sl = e(), sr = e();
@@ -87,32 +80,26 @@ public:
         l += sz;
         r += sz;
 
-        int i = lg;
-        while(((l >> i) << i) != l) {
-            push(l >> i);
-            i--;
-        }
-        int j = lg;
-        while(((l ^ r) >> j) == 0) j--;
-        int k = j;
-        while(((r >> j) << j) != r) {
-            push(r >> j);
-            j--;
+        for(int i = lg; i >= 1; i--) {
+            if(((l >> i) << i) != l) push(l >> i);
+            if(((r >> i) << i) != r) push((r - 1) >> i);
         }
 
         {
-            int l2 = l, r2 = r;
+            int _l = l, _r = r;
             while(l < r) {
                 if(l & 1) all_apply(l++, f);
                 if(r & 1) all_apply(--r, f);
                 l >>= 1;
                 r >>= 1;
             }
-            l = l2;
-            r = r2;
+            l = _l;
+            r = _r;
         }
 
-        for(j++; j <= k; j++) calc(r >> j);
-        for(i++; i <= lg; i++) calc(l >> i);
+        for(int i = 1; i <= lg; i++) {
+            if(((l >> i) << i) != l) calc(l >> i);
+            if(((r >> i) << i) != r) calc((r - 1) >> i);
+        }
     }
 };
