@@ -103,3 +103,7 @@ public:
         }
     }
 };
+/*
+ * @brief Lazy-Segment-Tree
+ * @docs docs/lazy-segment-tree.md
+ */
