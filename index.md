@@ -44,5 +44,8 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/yosupo-point-set-range-composite.test.cpp
       title: test/yosupo-point-set-range-composite.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: test/yosupo-range-affine-range-sum.test.cpp
+      title: test/yosupo-range-affine-range-sum.test.cpp
 layout: toppage
 ---

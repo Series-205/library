@@ -9,6 +9,9 @@ data:
   - icon: ':heavy_check_mark:'
     path: test/AOJ-DLS-2-G.test.cpp
     title: test/AOJ-DLS-2-G.test.cpp
+  - icon: ':heavy_check_mark:'
+    path: test/yosupo-range-affine-range-sum.test.cpp
+    title: test/yosupo-range-affine-range-sum.test.cpp
   _isVerificationFailed: false
   _pathExtension: cpp
   _verificationStatusIcon: ':heavy_check_mark:'
@@ -102,6 +105,7 @@ data:
   verifiedWith:
   - test/AOJ-DLS-2-G.test.cpp
   - test/AOJ-DLS-2-F.test.cpp
+  - test/yosupo-range-affine-range-sum.test.cpp
 documentation_of: segtree/lazy-segment-tree.cpp
 layout: document
 redirect_from:
