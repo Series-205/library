@@ -11,7 +11,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: segtree/fenwick-tree.cpp
       title: Fenwick-Tree
-    - icon: ':warning:'
+    - icon: ':heavy_check_mark:'
       path: segtree/lazy-segment-tree.cpp
       title: segtree/lazy-segment-tree.cpp
     - icon: ':heavy_check_mark:'
@@ -29,6 +29,12 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/AOJ-DLS-2-B.test.cpp
       title: test/AOJ-DLS-2-B.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: test/AOJ-DLS-2-F.test.cpp
+      title: test/AOJ-DLS-2-F.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: test/AOJ-DLS-2-G.test.cpp
+      title: test/AOJ-DLS-2-G.test.cpp
     - icon: ':heavy_check_mark:'
       path: test/yosupo-Unionfind.test.cpp
       title: test/yosupo-Unionfind.test.cpp
