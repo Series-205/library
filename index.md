@@ -61,5 +61,8 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/yosupo-vertex-add-path-sum.test.cpp
       title: test/yosupo-vertex-add-path-sum.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: test/yosupo-vertex-add-subtree-sum.test.cpp
+      title: test/yosupo-vertex-add-subtree-sum.test.cpp
 layout: toppage
 ---
