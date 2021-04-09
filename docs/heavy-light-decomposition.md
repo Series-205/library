@@ -1,3 +1,7 @@
+## TODO
+
+`query()` を交換則が成り立たなくても OK な感じにする
+
 ## 説明
 
 - `HeavyLightDecomposition(g)`: 木 $g$ で初期化
