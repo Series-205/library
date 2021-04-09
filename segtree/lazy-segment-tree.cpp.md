@@ -45,19 +45,21 @@ data:
     \n        S sl = e(), sr = e();\n        while(l < r) {\n            if(l & 1)\
     \ sl = op(sl, data[l++]);\n            if(r & 1) sr = op(data[--r], sr);\n   \
     \         l >>= 1;\n            r >>= 1;\n        }\n\n        return op(sl, sr);\n\
-    \    }\n\n    S all_prod() { return data[1]; }\n\n    void apply(int p, F f) {\
-    \ set(p, mapping(f, data[p])); }\n    void apply(int l, int r, F f) {\n      \
-    \  assert(0 <= l && l <= r && r <= _n);\n        if(l == r) return;\n        l\
-    \ += sz;\n        r += sz;\n\n        for(int i = lg; i >= 1; i--) {\n       \
-    \     if(((l >> i) << i) != l) push(l >> i);\n            if(((r >> i) << i) !=\
-    \ r) push((r - 1) >> i);\n        }\n\n        {\n            int _l = l, _r =\
-    \ r;\n            while(l < r) {\n                if(l & 1) all_apply(l++, f);\n\
-    \                if(r & 1) all_apply(--r, f);\n                l >>= 1;\n    \
-    \            r >>= 1;\n            }\n            l = _l;\n            r = _r;\n\
-    \        }\n\n        for(int i = 1; i <= lg; i++) {\n            if(((l >> i)\
-    \ << i) != l) calc(l >> i);\n            if(((r >> i) << i) != r) calc((r - 1)\
-    \ >> i);\n        }\n    }\n};\n/*\n * @brief Lazy-Segment-Tree\n * @docs docs/lazy-segment-tree.md\n\
-    \ */\n"
+    \    }\n\n    S all_prod() { return data[1]; }\n\n    void apply(int p, F f) {\n\
+    \        assert(0 <= p && p < _n);\n        p += sz;\n        for(int i = lg;\
+    \ i >= 1; i--) push(p >> i);\n        data[p] = mapping(f, data[p]);\n       \
+    \ for(int i = 1; i <= lg; i++) calc(p >> i);\n    }\n    void apply(int l, int\
+    \ r, F f) {\n        assert(0 <= l && l <= r && r <= _n);\n        if(l == r)\
+    \ return;\n        l += sz;\n        r += sz;\n\n        for(int i = lg; i >=\
+    \ 1; i--) {\n            if(((l >> i) << i) != l) push(l >> i);\n            if(((r\
+    \ >> i) << i) != r) push((r - 1) >> i);\n        }\n\n        {\n            int\
+    \ _l = l, _r = r;\n            while(l < r) {\n                if(l & 1) all_apply(l++,\
+    \ f);\n                if(r & 1) all_apply(--r, f);\n                l >>= 1;\n\
+    \                r >>= 1;\n            }\n            l = _l;\n            r =\
+    \ _r;\n        }\n\n        for(int i = 1; i <= lg; i++) {\n            if(((l\
+    \ >> i) << i) != l) calc(l >> i);\n            if(((r >> i) << i) != r) calc((r\
+    \ - 1) >> i);\n        }\n    }\n};\n/*\n * @brief Lazy-Segment-Tree\n * @docs\
+    \ docs/lazy-segment-tree.md\n */\n"
   code: "#pragma once\n#include <bits/stdc++.h>\nusing namespace std;\n\ntemplate\
     \ <class S, S (*op)(S, S), S (*e)(), class F, S (*mapping)(F, S),\n          F\
     \ (*composition)(F, F), F (*id)()>\nclass LazySegmentTree {\nprivate:\n    int\
@@ -84,23 +86,26 @@ data:
     \ = e();\n        while(l < r) {\n            if(l & 1) sl = op(sl, data[l++]);\n\
     \            if(r & 1) sr = op(data[--r], sr);\n            l >>= 1;\n       \
     \     r >>= 1;\n        }\n\n        return op(sl, sr);\n    }\n\n    S all_prod()\
-    \ { return data[1]; }\n\n    void apply(int p, F f) { set(p, mapping(f, data[p]));\
-    \ }\n    void apply(int l, int r, F f) {\n        assert(0 <= l && l <= r && r\
-    \ <= _n);\n        if(l == r) return;\n        l += sz;\n        r += sz;\n\n\
-    \        for(int i = lg; i >= 1; i--) {\n            if(((l >> i) << i) != l)\
-    \ push(l >> i);\n            if(((r >> i) << i) != r) push((r - 1) >> i);\n  \
-    \      }\n\n        {\n            int _l = l, _r = r;\n            while(l <\
-    \ r) {\n                if(l & 1) all_apply(l++, f);\n                if(r & 1)\
-    \ all_apply(--r, f);\n                l >>= 1;\n                r >>= 1;\n   \
-    \         }\n            l = _l;\n            r = _r;\n        }\n\n        for(int\
-    \ i = 1; i <= lg; i++) {\n            if(((l >> i) << i) != l) calc(l >> i);\n\
-    \            if(((r >> i) << i) != r) calc((r - 1) >> i);\n        }\n    }\n\
-    };\n/*\n * @brief Lazy-Segment-Tree\n * @docs docs/lazy-segment-tree.md\n */\n"
+    \ { return data[1]; }\n\n    void apply(int p, F f) {\n        assert(0 <= p &&\
+    \ p < _n);\n        p += sz;\n        for(int i = lg; i >= 1; i--) push(p >> i);\n\
+    \        data[p] = mapping(f, data[p]);\n        for(int i = 1; i <= lg; i++)\
+    \ calc(p >> i);\n    }\n    void apply(int l, int r, F f) {\n        assert(0\
+    \ <= l && l <= r && r <= _n);\n        if(l == r) return;\n        l += sz;\n\
+    \        r += sz;\n\n        for(int i = lg; i >= 1; i--) {\n            if(((l\
+    \ >> i) << i) != l) push(l >> i);\n            if(((r >> i) << i) != r) push((r\
+    \ - 1) >> i);\n        }\n\n        {\n            int _l = l, _r = r;\n     \
+    \       while(l < r) {\n                if(l & 1) all_apply(l++, f);\n       \
+    \         if(r & 1) all_apply(--r, f);\n                l >>= 1;\n           \
+    \     r >>= 1;\n            }\n            l = _l;\n            r = _r;\n    \
+    \    }\n\n        for(int i = 1; i <= lg; i++) {\n            if(((l >> i) <<\
+    \ i) != l) calc(l >> i);\n            if(((r >> i) << i) != r) calc((r - 1) >>\
+    \ i);\n        }\n    }\n};\n/*\n * @brief Lazy-Segment-Tree\n * @docs docs/lazy-segment-tree.md\n\
+    \ */\n"
   dependsOn: []
   isVerificationFile: false
   path: segtree/lazy-segment-tree.cpp
   requiredBy: []
-  timestamp: '2021-04-09 13:02:58+09:00'
+  timestamp: '2021-04-09 16:57:09+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/AOJ-DLS-2-G.test.cpp

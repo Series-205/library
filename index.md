@@ -9,6 +9,9 @@ data:
   - name: segtree
     pages:
     - icon: ':heavy_check_mark:'
+      path: segtree/dual-segment-tree.cpp
+      title: Dual-Segment-Tree
+    - icon: ':heavy_check_mark:'
       path: segtree/fenwick-tree.cpp
       title: Fenwick-Tree
     - icon: ':heavy_check_mark:'
@@ -29,6 +32,9 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/AOJ-DLS-2-B.test.cpp
       title: test/AOJ-DLS-2-B.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: test/AOJ-DLS-2-D.test.cpp
+      title: test/AOJ-DLS-2-D.test.cpp
     - icon: ':heavy_check_mark:'
       path: test/AOJ-DLS-2-F.test.cpp
       title: test/AOJ-DLS-2-F.test.cpp
