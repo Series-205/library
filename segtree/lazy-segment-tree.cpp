@@ -73,7 +73,13 @@ public:
 
     S all_prod() { return data[1]; }
 
-    void apply(int p, F f) { set(p, mapping(f, data[p])); }
+    void apply(int p, F f) {
+        assert(0 <= p && p < _n);
+        p += sz;
+        for(int i = lg; i >= 1; i--) push(p >> i);
+        data[p] = mapping(f, data[p]);
+        for(int i = 1; i <= lg; i++) calc(p >> i);
+    }
     void apply(int l, int r, F f) {
         assert(0 <= l && l <= r && r <= _n);
         if(l == r) return;
