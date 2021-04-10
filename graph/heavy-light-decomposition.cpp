@@ -3,18 +3,11 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-struct HeavyLightDecomposition {
-    vector<vector<int>> &g;
+class HeavyLightDecomposition {
+private:
+    vector<vector<int>> g;
     vector<int> sz, in, out, head, rev, par;
-
-    explicit HeavyLightDecomposition(vector<vector<int>> &g)
-        : g(g),
-          sz(g.size()),
-          in(g.size()),
-          out(g.size()),
-          head(g.size()),
-          rev(g.size()),
-          par(g.size()) {}
+    bool built;
 
     void dfs_sz(int v, int p) {
         par[v] = p;
@@ -39,13 +32,35 @@ struct HeavyLightDecomposition {
         out[v] = t;
     }
 
+public:
+    explicit HeavyLightDecomposition(int n)
+        : g(n), sz(n), in(n), out(n), head(n), rev(n), par(n), built(false) {}
+    explicit HeavyLightDecomposition(const vector<vector<int>> &g, int root = 0)
+        : g(g),
+          sz(g.size()),
+          in(g.size()),
+          out(g.size()),
+          head(g.size()),
+          rev(g.size()),
+          par(g.size()) {
+        build(root);
+    }
+
+    void add_edge(int u, int v) {
+        g[u].push_back(v);
+        g[v].push_back(u);
+    }
+
     void build(int r = 0) {
         dfs_sz(r, -1);
         int t = 0;
+        head[r] = r;
         dfs_hld(r, -1, t);
+        built = true;
     }
 
     int lca(int u, int v) {
+        assert(built);
         while(true) {
             if(in[u] > in[v]) swap(u, v);
             if(head[u] == head[v]) return u;
@@ -53,31 +68,40 @@ struct HeavyLightDecomposition {
         }
     }
 
-    template <typename Q>
-    void add(int u, int v, const Q &q, bool edge = false) {
+    pair<int, int> subtree_query(int u) {
+        assert(built);
+        return pair<int, int>{in[u], out[u]};
+    }
+
+    vector<pair<int, int>> node_query(int u, int v) {
+        assert(built);
+        vector<pair<int, int>> res;
         while(true) {
             if(in[u] > in[v]) swap(u, v);
             if(head[u] == head[v]) break;
-            q(in[head[v]], in[v] + 1);
+            res.emplace_back(in[head[v]], in[v] + 1);
             v = par[head[v]];
         }
-        q(in[u] + edge, in[v] + 1);
+        res.emplace_back(in[u], in[v] + 1);
+        return res;
     }
 
-    template <typename T, typename Q, typename F>
-    T query(int u, int v, const T &ti, const Q &q, const F &f,
-            bool edge = false) {
-        T l = ti, r = ti;
+    vector<pair<int, int>> edge_query(int u, int v) {
+        assert(built);
+        vector<pair<int, int>> res;
         while(true) {
-            if(in[u] > in[v]) {
-                swap(u, v);
-                swap(l, r);
-            }
+            if(in[u] > in[v]) swap(u, v);
             if(head[u] == head[v]) break;
-            l = f(q(in[head[v]], in[v] + 1), l);
+            res.emplace_back(in[head[v]], in[v] + 1);
             v = par[head[v]];
         }
-        return f(f(q(in[u] + edge, in[v] + 1), l), r);
+        res.emplace_back(in[u] + 1, in[v] + 1);
+        return res;
+    }
+
+    int operator[](int u) {
+        assert(built);
+        return in[u];
     }
 };
 /*

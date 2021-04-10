@@ -22,19 +22,17 @@ int main() {
     vector<ll> a(n);
     for(int i = 0; i < n; i++) cin >> a[i];
 
-    vector<vector<int>> g(n);
-    HeavyLightDecomposition tree(g);
+    HeavyLightDecomposition tree(n);
 
     for(int i = 0; i < n - 1; i++) {
         int u, v;
         cin >> u >> v;
-        g[u].push_back(v);
-        g[v].push_back(u);
+        tree.add_edge(u, v);
     }
 
     tree.build();
     vector<ll> b(n);
-    for(int i = 0; i < n; i++) b[tree.in[i]] = a[i];
+    for(int i = 0; i < n; i++) b[tree[i]] = a[i];
 
     SegmentTree<S, op, e> seg(b);
 
@@ -44,14 +42,14 @@ int main() {
         if(t) {
             int u, v;
             cin >> u >> v;
-            cout << tree.query(
-                        u, v, e(), [&](int l, int r) { return seg.prod(l, r); },
-                        op)
-                 << "\n";
+            S res = e();
+            for(auto [l, r] : tree.node_query(u, v))
+                res = op(res, seg.prod(l, r));
+            cout << res << "\n";
         } else {
             int p, x;
             cin >> p >> x;
-            seg.set(tree.in[p], seg.get(tree.in[p]) + x);
+            seg.set(tree[p], seg.get(tree[p]) + x);
         }
     }
 

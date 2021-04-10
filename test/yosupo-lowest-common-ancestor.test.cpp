@@ -11,14 +11,12 @@ int main() {
 
     int n, q;
     cin >> n >> q;
-    vector<vector<int>> g(n);
-    HeavyLightDecomposition tree(g);
+    HeavyLightDecomposition tree(n);
     for(int i = 1; i < n; i++) {
         int p;
         cin >> p;
-        g[p].push_back(i);
+        tree.add_edge(p, i);
     }
-
     tree.build();
 
     for(int i = 0; i < q; i++) {
