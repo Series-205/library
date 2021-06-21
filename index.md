@@ -9,6 +9,9 @@ data:
   - name: graph
     pages:
     - icon: ':heavy_check_mark:'
+      path: graph/dinic.cpp
+      title: Dinic
+    - icon: ':heavy_check_mark:'
       path: graph/ford-fulkerson.cpp
       title: Ford-Fulkerson
     - icon: ':heavy_check_mark:'
@@ -49,6 +52,9 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/AOJ-DLS-2-G.test.cpp
       title: test/AOJ-DLS-2-G.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: test/AOJ-GRL-6-A-2.test.cpp
+      title: test/AOJ-GRL-6-A-2.test.cpp
     - icon: ':heavy_check_mark:'
       path: test/AOJ-GRL-6-A.test.cpp
       title: test/AOJ-GRL-6-A.test.cpp
