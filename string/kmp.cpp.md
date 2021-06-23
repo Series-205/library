@@ -64,4 +64,4 @@ title: KMP
 
 ## 計算量
 
-$O(|S|)$
+$O(\left|S\left|)$
