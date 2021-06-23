@@ -100,12 +100,12 @@ data:
     \    }\n\n        for(int i = 1; i <= lg; i++) {\n            if(((l >> i) <<\
     \ i) != l) calc(l >> i);\n            if(((r >> i) << i) != r) calc((r - 1) >>\
     \ i);\n        }\n    }\n};\n/*\n * @brief Lazy-Segment-Tree\n * @docs docs/lazy-segment-tree.md\n\
-    \ */\n"
+    \ */"
   dependsOn: []
   isVerificationFile: false
   path: segtree/lazy-segment-tree.cpp
   requiredBy: []
-  timestamp: '2021-04-09 16:57:09+09:00'
+  timestamp: '2021-06-23 20:37:43+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/yosupo-range-affine-range-sum.test.cpp
