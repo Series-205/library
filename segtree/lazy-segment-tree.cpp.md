@@ -108,9 +108,9 @@ data:
   timestamp: '2021-06-23 20:37:43+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
+  - test/AOJ-DLS-2-F.test.cpp
   - test/yosupo-range-affine-range-sum.test.cpp
   - test/AOJ-DLS-2-G.test.cpp
-  - test/AOJ-DLS-2-F.test.cpp
 documentation_of: segtree/lazy-segment-tree.cpp
 layout: document
 redirect_from:

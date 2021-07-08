@@ -36,12 +36,18 @@ data:
     - icon: ':heavy_check_mark:'
       path: string/kmp.cpp
       title: KMP
+    - icon: ':heavy_check_mark:'
+      path: string/suffix-array.cpp
+      title: string/suffix-array.cpp
   verificationCategories:
   - name: test
     pages:
     - icon: ':heavy_check_mark:'
       path: test/AOJ-ALDS1-14-B.test.cpp
       title: test/AOJ-ALDS1-14-B.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: test/AOJ-ALDS1-14-D.test.cpp
+      title: test/AOJ-ALDS1-14-D.test.cpp
     - icon: ':heavy_check_mark:'
       path: test/AOJ-DLS-1-A.test.cpp
       title: test/AOJ-DLS-1-A.test.cpp

@@ -98,9 +98,9 @@ data:
   timestamp: '2021-04-10 19:01:41+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - test/yosupo-vertex-add-path-sum.test.cpp
-  - test/yosupo-lowest-common-ancestor.test.cpp
   - test/yosupo-vertex-add-subtree-sum.test.cpp
+  - test/yosupo-lowest-common-ancestor.test.cpp
+  - test/yosupo-vertex-add-path-sum.test.cpp
 documentation_of: graph/heavy-light-decomposition.cpp
 layout: document
 redirect_from:
