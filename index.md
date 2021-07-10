@@ -88,6 +88,9 @@ data:
       path: test/yosupo-range-affine-range-sum.test.cpp
       title: test/yosupo-range-affine-range-sum.test.cpp
     - icon: ':heavy_check_mark:'
+      path: test/yosupo-suffixarray.test.cpp
+      title: test/yosupo-suffixarray.test.cpp
+    - icon: ':heavy_check_mark:'
       path: test/yosupo-vertex-add-path-sum.test.cpp
       title: test/yosupo-vertex-add-path-sum.test.cpp
     - icon: ':heavy_check_mark:'
