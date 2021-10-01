@@ -109,8 +109,8 @@ data:
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/AOJ-DLS-2-F.test.cpp
-  - test/yosupo-range-affine-range-sum.test.cpp
   - test/AOJ-DLS-2-G.test.cpp
+  - test/yosupo-range-affine-range-sum.test.cpp
 documentation_of: segtree/lazy-segment-tree.cpp
 layout: document
 redirect_from:

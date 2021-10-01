@@ -1,6 +1,11 @@
 ---
 data:
   libraryCategories:
+  - name: convolution
+    pages:
+    - icon: ':heavy_check_mark:'
+      path: convolution/xor_convolution.cpp
+      title: convolution/xor_convolution.cpp
   - name: data-structure
     pages:
     - icon: ':heavy_check_mark:'
@@ -75,6 +80,9 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/yosupo-Unionfind.test.cpp
       title: test/yosupo-Unionfind.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: test/yosupo-bitwise_xor_convolution.test.cpp
+      title: test/yosupo-bitwise_xor_convolution.test.cpp
     - icon: ':heavy_check_mark:'
       path: test/yosupo-lowest-common-ancestor.test.cpp
       title: test/yosupo-lowest-common-ancestor.test.cpp
