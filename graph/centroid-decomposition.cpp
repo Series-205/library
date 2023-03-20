@@ -62,3 +62,7 @@ public:
         return root = build(0);
     }
 };
+/*
+ * @brief Centroid-Decomposition
+ * @docs docs/centroid-decomposition.md
+ */
