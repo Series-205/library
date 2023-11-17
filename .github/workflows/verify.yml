@@ -88,3 +88,13 @@ jobs:
         YUKICODER_TOKEN: ${{ secrets.YUKICODER_TOKEN }}
         GH_PAT: ${{ secrets.GH_PAT }}
       run: oj-verify all
+
+    - name: Commit and push any changes
+      run: 
+        git config user.name "Series-205"
+        git config user.email "esio.trot28@gmail.com"
+        git add -A
+        timestamp=$(date -u)
+        git commit -m "Latest data: ${timestamp}" || exit 0
+        git pull
+        git push
