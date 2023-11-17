@@ -94,7 +94,6 @@ jobs:
         git config user.name "Series-205"
         git config user.email "esio.trot28@gmail.com"
         git add -A
-        timestamp=$(date -u)
-        git commit -m "Latest data: ${timestamp}" || exit 0
+        git commit -m "Latest data: $(date -u)" || exit 0
         git pull
         git push
