@@ -13,6 +13,9 @@ data:
       title: Union-Find
   - name: graph
     pages:
+    - icon: ':warning:'
+      path: graph/centroid-decomposition.cpp
+      title: Centroid Decomposition
     - icon: ':heavy_check_mark:'
       path: graph/dinic.cpp
       title: Dinic

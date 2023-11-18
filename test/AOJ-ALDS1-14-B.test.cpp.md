@@ -39,13 +39,13 @@ data:
     \n\n#include <bits/stdc++.h>\nusing namespace std;\n\n#include \"../string/kmp.cpp\"\
     \n\nint main() {\n    cin.tie(nullptr);\n    ios::sync_with_stdio(false);\n\n\
     \    string str, word;\n    cin >> str;\n    cin >> word;\n\n    auto ans = KMP::search(str,\
-    \ word);\n\n    for(auto &&val : ans) cout << val << \"\\n\";\n}"
+    \ word);\n\n    for(auto &&val : ans) cout << val << \"\\n\";\n}\n"
   dependsOn:
   - string/kmp.cpp
   isVerificationFile: true
   path: test/AOJ-ALDS1-14-B.test.cpp
   requiredBy: []
-  timestamp: '2021-06-23 20:37:43+09:00'
+  timestamp: '2023-11-17 23:14:00+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/AOJ-ALDS1-14-B.test.cpp

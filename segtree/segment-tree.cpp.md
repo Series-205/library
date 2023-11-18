@@ -67,9 +67,9 @@ data:
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
   - test/yosupo-point-set-range-composite.test.cpp
-  - test/yosupo-vertex-add-path-sum.test.cpp
-  - test/yosupo-vertex-add-subtree-sum.test.cpp
   - test/AOJ-DLS-2-A.test.cpp
+  - test/yosupo-vertex-add-subtree-sum.test.cpp
+  - test/yosupo-vertex-add-path-sum.test.cpp
 documentation_of: segtree/segment-tree.cpp
 layout: document
 redirect_from:
