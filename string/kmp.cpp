@@ -7,13 +7,17 @@ using namespace std;
 class KMP {
 private:
     static vector<int> makeTable(const string &s) {
-        int n = s.size();
+        int n = (int)s.size();
         vector<int> ret(n + 1);
         int j = -1;
         ret[0] = j;
         for(int i = 0; i < n; i++) {
             while(j >= 0 && s[i] != s[j]) j = ret[j];
-            ret[i + 1] = ++j;
+            j++;
+            if(i + 1 < n && ret[j] >= 0 && s[i + 1] == s[j])
+                ret[i + 1] = ret[j];
+            else
+                ret[i + 1] = j;
         }
         return ret;
     }
@@ -23,7 +27,7 @@ public:
     // O(|str|)
     static vector<int> search(const string &str, const string &word) {
         vector<int> table(makeTable(word)), ret;
-        const int N = str.size(), M = word.size();
+        const int N = (int)str.size(), M = (int)word.size();
         int m = 0, i = 0;
         while(m + i < N) {
             if(word[i] == str[m + i]) {
