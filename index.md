@@ -25,6 +25,9 @@ data:
     - icon: ':heavy_check_mark:'
       path: graph/heavy-light-decomposition.cpp
       title: Heavy-Light-Decomposition
+    - icon: ':warning:'
+      path: graph/rerooting.cpp
+      title: graph/rerooting.cpp
   - name: segtree
     pages:
     - icon: ':heavy_check_mark:'
