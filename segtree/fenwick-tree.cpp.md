@@ -44,8 +44,8 @@ data:
   timestamp: '2021-04-08 19:35:44+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - test/yosupo-point-add-range-sum.test.cpp
   - test/AOJ-DLS-2-B.test.cpp
+  - test/yosupo-point-add-range-sum.test.cpp
 documentation_of: segtree/fenwick-tree.cpp
 layout: document
 redirect_from:

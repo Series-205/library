@@ -41,8 +41,8 @@ data:
   timestamp: '2021-04-08 19:35:44+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - test/yosupo-Unionfind.test.cpp
   - test/AOJ-DLS-1-A.test.cpp
+  - test/yosupo-Unionfind.test.cpp
 documentation_of: data-structure/union-find.cpp
 layout: document
 redirect_from:
