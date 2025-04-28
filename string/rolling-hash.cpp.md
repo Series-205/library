@@ -25,7 +25,8 @@ data:
     \  }\n        }\n        return power[p];\n    }\n\npublic:\n    explicit RollingHash()\
     \ : base(get_base()) {}\n    vector<uint64_t> build(const string &s) {\n     \
     \   vector<uint64_t> hashed(s.size() + 1);\n        for(size_t i = 0; i < s.size();\
-    \ i++)\n            hashed[i + 1] = mul(hashed[i], base) + s[i];\n        return\
+    \ i++) {\n            hashed[i + 1] = mul(hashed[i], base) + s[i];\n         \
+    \   if(hashed[i + 1] >= MOD) hashed[i + 1] -= MOD;\n        }\n        return\
     \ hashed;\n    }\n    uint64_t slice(const vector<uint64_t> &hashed, size_t l,\
     \ size_t r) {\n        uint64_t res = hashed[r] + MOD - mul(hashed[l], pow(r -\
     \ l));\n        if(res >= MOD) res -= MOD;\n        return res;\n    }\n};\n"
@@ -42,16 +43,17 @@ data:
     \ - 1], base);\n                sz++;\n            }\n        }\n        return\
     \ power[p];\n    }\n\npublic:\n    explicit RollingHash() : base(get_base()) {}\n\
     \    vector<uint64_t> build(const string &s) {\n        vector<uint64_t> hashed(s.size()\
-    \ + 1);\n        for(size_t i = 0; i < s.size(); i++)\n            hashed[i +\
-    \ 1] = mul(hashed[i], base) + s[i];\n        return hashed;\n    }\n    uint64_t\
-    \ slice(const vector<uint64_t> &hashed, size_t l, size_t r) {\n        uint64_t\
-    \ res = hashed[r] + MOD - mul(hashed[l], pow(r - l));\n        if(res >= MOD)\
-    \ res -= MOD;\n        return res;\n    }\n};"
+    \ + 1);\n        for(size_t i = 0; i < s.size(); i++) {\n            hashed[i\
+    \ + 1] = mul(hashed[i], base) + s[i];\n            if(hashed[i + 1] >= MOD) hashed[i\
+    \ + 1] -= MOD;\n        }\n        return hashed;\n    }\n    uint64_t slice(const\
+    \ vector<uint64_t> &hashed, size_t l, size_t r) {\n        uint64_t res = hashed[r]\
+    \ + MOD - mul(hashed[l], pow(r - l));\n        if(res >= MOD) res -= MOD;\n  \
+    \      return res;\n    }\n};"
   dependsOn: []
   isVerificationFile: false
   path: string/rolling-hash.cpp
   requiredBy: []
-  timestamp: '2025-04-28 14:41:07+09:00'
+  timestamp: '2025-04-28 14:46:55+09:00'
   verificationStatus: LIBRARY_ALL_WA
   verifiedWith:
   - test/yosupo-zalgo-rollinghash.test.cpp
