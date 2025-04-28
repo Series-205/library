@@ -4,3 +4,10 @@
 [![GitHub Pages](https://img.shields.io/static/v1?label=GitHub+Pages&message=+&color=brightgreen&logo=github)](https://Series-205.github.io/library/)
 
 ぼくのライブラリ
+
+追加したいもの:
+- trie
+- CHT
+- FFT
+- Mo
+- (monotone minima?)
