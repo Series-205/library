@@ -47,7 +47,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: string/kmp.cpp
       title: KMP
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: string/rolling-hash.cpp
       title: string/rolling-hash.cpp
     - icon: ':heavy_check_mark:'
@@ -113,7 +113,7 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/yosupo-vertex-add-subtree-sum.test.cpp
       title: test/yosupo-vertex-add-subtree-sum.test.cpp
-    - icon: ':heavy_check_mark:'
+    - icon: ':x:'
       path: test/yosupo-zalgo-rollinghash.test.cpp
       title: test/yosupo-zalgo-rollinghash.test.cpp
 layout: toppage
