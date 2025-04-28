@@ -37,8 +37,10 @@ public:
     explicit RollingHash() : base(get_base()) {}
     vector<uint64_t> build(const string &s) {
         vector<uint64_t> hashed(s.size() + 1);
-        for(size_t i = 0; i < s.size(); i++)
+        for(size_t i = 0; i < s.size(); i++) {
             hashed[i + 1] = mul(hashed[i], base) + s[i];
+            if(hashed[i + 1] >= MOD) hashed[i + 1] -= MOD;
+        }
         return hashed;
     }
     uint64_t slice(const vector<uint64_t> &hashed, size_t l, size_t r) {
