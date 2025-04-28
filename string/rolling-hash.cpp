@@ -6,15 +6,13 @@ using namespace std;
 class RollingHash {
 private:
     const uint64_t MOD = (1ull << 61) - 1;
-    const uint64_t POSITIVIZER = MOD * 7;
     vector<uint64_t> power{1};
     uint64_t base = 0;
 
-    uint64_t mul(uint64_t l, uint64_t r) {
+    uint64_t mul(__uint128_t l, __uint128_t r) {
         __uint128_t t = l * r;
         t = (t >> 61) + (t & MOD);
-        if(t >= MOD) return t - MOD;
-        return t;
+        return t < MOD ? t : t - MOD;
     }
     uint64_t get_base() {
         random_device engine;
@@ -45,7 +43,6 @@ public:
     }
     uint64_t slice(const vector<uint64_t> &hashed, size_t l, size_t r) {
         uint64_t res = hashed[r] + MOD - mul(hashed[l], pow(r - l));
-        if(res >= MOD) res -= MOD;
-        return res;
+        return res < MOD ? res : res - MOD;
     }
 };
