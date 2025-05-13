@@ -4,6 +4,9 @@ data:
   - icon: ':heavy_check_mark:'
     path: convolution/xor_convolution.cpp
     title: convolution/xor_convolution.cpp
+  - icon: ':heavy_check_mark:'
+    path: modint/modint.cpp
+    title: modint/modint.cpp
   _extendedRequiredBy: []
   _extendedVerifiedWith: []
   _isVerificationFailed: false
@@ -27,75 +30,46 @@ data:
     \  while(sz < n) sz <<= 1;\n        f.resize(sz);\n        g.resize(sz);\n   \
     \     FWT(f);\n        FWT(g);\n        for(int i = 0; i < sz; i++) f[i] *= g[i];\n\
     \        FWT(f);\n        for(int i = 0; i < sz; i++) f[i] /= sz;\n        return\
-    \ f;\n    }\n};\n#line 7 \"test/yosupo-bitwise_xor_convolution.test.cpp\"\n\n\
-    template <int M>\nclass ModInt {\n    int x;\n\npublic:\n    constexpr ModInt()\
-    \ : x(0) {}\n    constexpr ModInt(int64_t y) : x(y >= 0 ? y % M : (M - (-y) %\
-    \ M) % M) {}\n    constexpr ModInt &operator+=(const ModInt p) {\n        if((x\
-    \ += p.x) >= M) x -= M;\n        return *this;\n    }\n    constexpr ModInt &operator-=(const\
-    \ ModInt p) {\n        if((x += M - p.x) >= M) x -= M;\n        return *this;\n\
-    \    }\n    constexpr ModInt &operator*=(const ModInt p) {\n        x = (int)(1LL\
-    \ * x * p.x % M);\n        return *this;\n    }\n    constexpr ModInt &operator/=(const\
-    \ ModInt p) {\n        *this *= p.inverse();\n        return *this;\n    }\n \
-    \   constexpr ModInt operator-() const { return ModInt(-x); }\n    constexpr ModInt\
-    \ operator+(const ModInt p) const {\n        return ModInt(*this) += p;\n    }\n\
-    \    constexpr ModInt operator-(const ModInt p) const {\n        return ModInt(*this)\
-    \ -= p;\n    }\n    constexpr ModInt operator*(const ModInt p) const {\n     \
-    \   return ModInt(*this) *= p;\n    }\n    constexpr ModInt operator/(const ModInt\
-    \ p) const {\n        return ModInt(*this) /= p;\n    }\n    constexpr bool operator==(const\
-    \ ModInt p) const { return x == p.x; }\n    constexpr bool operator!=(const ModInt\
-    \ p) const { return x != p.x; }\n    constexpr ModInt inverse() const {\n    \
-    \    int a = x, b = M, u = 1, v = 0, t = 0;\n        while(b > 0) {\n        \
-    \    t = a / b;\n            swap(a -= t * b, b);\n            swap(u -= t * v,\
-    \ v);\n        }\n        return ModInt(u);\n    }\n    constexpr ModInt pow(int64_t\
-    \ k) const {\n        ModInt ret(1), mul(x);\n        while(k > 0) {\n       \
-    \     if(k & 1) ret *= mul;\n            mul *= mul;\n            k >>= 1;\n \
-    \       }\n        return ret;\n    }\n    constexpr friend ostream &operator<<(ostream\
-    \ &os, const ModInt &p) {\n        return os << p.x;\n    }\n    constexpr friend\
-    \ istream &operator>>(istream &is, ModInt &a) {\n        int64_t t = 0;\n    \
-    \    is >> t;\n        a = ModInt(t);\n        return (is);\n    }\n};\nusing\
-    \ mint = ModInt<998244353>;\n\nint main() {\n    cin.tie(nullptr);\n    ios::sync_with_stdio(false);\n\
-    \n    int n;\n    cin >> n;\n    vector<mint> a(1 << n), b(1 << n);\n    for(int\
-    \ i = 0; i < 1 << n; i++) cin >> a[i];\n    for(int i = 0; i < 1 << n; i++) cin\
-    \ >> b[i];\n\n    auto ans = xorConvolution::convolution(a, b);\n    for(int i\
-    \ = 0; i < 1 << n; i++) cout << ans[i] << \" \\n\"[(i + 1) == 1 << n];\n}\n"
+    \ f;\n    }\n};\n#line 2 \"modint/modint.cpp\"\n\ntemplate <long long MOD>\nstruct\
+    \ Modint {\n    long long x;\n    Modint(long long x_ = 0) : x(x_ % MOD) {\n \
+    \       if(x < 0) x += MOD;\n    }\n    friend Modint operator+(Modint a, Modint\
+    \ b) { return a.x + b.x; }\n    friend Modint operator-(Modint a, Modint b) {\
+    \ return a.x - b.x; }\n    friend Modint operator*(Modint a, Modint b) { return\
+    \ a.x * b.x; }\n    friend Modint operator/(Modint a, Modint b) { return a * b.inv();\
+    \ }\n    // 4 \u884C\u30B3\u30D4\u30DA  Alt + Shift + \u30AF\u30EA\u30C3\u30AF\
+    \u3067\u8907\u6570\u30AB\u30FC\u30BD\u30EB\n    friend Modint& operator+=(Modint&\
+    \ a, Modint b) { return a = a.x + b.x; }\n    friend Modint& operator-=(Modint&\
+    \ a, Modint b) { return a = a.x - b.x; }\n    friend Modint& operator*=(Modint&\
+    \ a, Modint b) { return a = a.x * b.x; }\n    friend Modint& operator/=(Modint&\
+    \ a, Modint b) { return a = a * b.inv(); }\n    Modint inv() const { return pow(MOD\
+    \ - 2); }\n    Modint pow(long long b) const {\n        Modint a = *this, c =\
+    \ 1;\n        while(b) {\n            if(b & 1) c *= a;\n            a *= a;\n\
+    \            b >>= 1;\n        }\n        return c;\n    }\n};\n#line 8 \"test/yosupo-bitwise_xor_convolution.test.cpp\"\
+    \n\nusing mint = Modint<998244353>;\n\nint main() {\n    cin.tie(nullptr);\n \
+    \   ios::sync_with_stdio(false);\n\n    int n;\n    cin >> n;\n    vector<mint>\
+    \ a(1 << n), b(1 << n);\n    for(int i = 0; i < 1 << n; i++) {\n        long long\
+    \ in;\n        cin >> in;\n        a[i] = in;\n    }\n    for(int i = 0; i < 1\
+    \ << n; i++) {\n        long long in;\n        cin >> in;\n        b[i] = in;\n\
+    \    }\n\n    auto ans = xorConvolution::convolution(a, b);\n    for(int i = 0;\
+    \ i < 1 << n; i++)\n        cout << ans[i].x << \" \\n\"[(i + 1) == 1 << n];\n\
+    }\n"
   code: "#define PROBLEM \"https://judge.yosupo.jp/problem/bitwise_xor_convolution\"\
     \n\n#include <bits/stdc++.h>\nusing namespace std;\n\n#include \"../convolution/xor_convolution.cpp\"\
-    \n\ntemplate <int M>\nclass ModInt {\n    int x;\n\npublic:\n    constexpr ModInt()\
-    \ : x(0) {}\n    constexpr ModInt(int64_t y) : x(y >= 0 ? y % M : (M - (-y) %\
-    \ M) % M) {}\n    constexpr ModInt &operator+=(const ModInt p) {\n        if((x\
-    \ += p.x) >= M) x -= M;\n        return *this;\n    }\n    constexpr ModInt &operator-=(const\
-    \ ModInt p) {\n        if((x += M - p.x) >= M) x -= M;\n        return *this;\n\
-    \    }\n    constexpr ModInt &operator*=(const ModInt p) {\n        x = (int)(1LL\
-    \ * x * p.x % M);\n        return *this;\n    }\n    constexpr ModInt &operator/=(const\
-    \ ModInt p) {\n        *this *= p.inverse();\n        return *this;\n    }\n \
-    \   constexpr ModInt operator-() const { return ModInt(-x); }\n    constexpr ModInt\
-    \ operator+(const ModInt p) const {\n        return ModInt(*this) += p;\n    }\n\
-    \    constexpr ModInt operator-(const ModInt p) const {\n        return ModInt(*this)\
-    \ -= p;\n    }\n    constexpr ModInt operator*(const ModInt p) const {\n     \
-    \   return ModInt(*this) *= p;\n    }\n    constexpr ModInt operator/(const ModInt\
-    \ p) const {\n        return ModInt(*this) /= p;\n    }\n    constexpr bool operator==(const\
-    \ ModInt p) const { return x == p.x; }\n    constexpr bool operator!=(const ModInt\
-    \ p) const { return x != p.x; }\n    constexpr ModInt inverse() const {\n    \
-    \    int a = x, b = M, u = 1, v = 0, t = 0;\n        while(b > 0) {\n        \
-    \    t = a / b;\n            swap(a -= t * b, b);\n            swap(u -= t * v,\
-    \ v);\n        }\n        return ModInt(u);\n    }\n    constexpr ModInt pow(int64_t\
-    \ k) const {\n        ModInt ret(1), mul(x);\n        while(k > 0) {\n       \
-    \     if(k & 1) ret *= mul;\n            mul *= mul;\n            k >>= 1;\n \
-    \       }\n        return ret;\n    }\n    constexpr friend ostream &operator<<(ostream\
-    \ &os, const ModInt &p) {\n        return os << p.x;\n    }\n    constexpr friend\
-    \ istream &operator>>(istream &is, ModInt &a) {\n        int64_t t = 0;\n    \
-    \    is >> t;\n        a = ModInt(t);\n        return (is);\n    }\n};\nusing\
-    \ mint = ModInt<998244353>;\n\nint main() {\n    cin.tie(nullptr);\n    ios::sync_with_stdio(false);\n\
-    \n    int n;\n    cin >> n;\n    vector<mint> a(1 << n), b(1 << n);\n    for(int\
-    \ i = 0; i < 1 << n; i++) cin >> a[i];\n    for(int i = 0; i < 1 << n; i++) cin\
-    \ >> b[i];\n\n    auto ans = xorConvolution::convolution(a, b);\n    for(int i\
-    \ = 0; i < 1 << n; i++) cout << ans[i] << \" \\n\"[(i + 1) == 1 << n];\n}"
+    \n#include \"../modint/modint.cpp\"\n\nusing mint = Modint<998244353>;\n\nint\
+    \ main() {\n    cin.tie(nullptr);\n    ios::sync_with_stdio(false);\n\n    int\
+    \ n;\n    cin >> n;\n    vector<mint> a(1 << n), b(1 << n);\n    for(int i = 0;\
+    \ i < 1 << n; i++) {\n        long long in;\n        cin >> in;\n        a[i]\
+    \ = in;\n    }\n    for(int i = 0; i < 1 << n; i++) {\n        long long in;\n\
+    \        cin >> in;\n        b[i] = in;\n    }\n\n    auto ans = xorConvolution::convolution(a,\
+    \ b);\n    for(int i = 0; i < 1 << n; i++)\n        cout << ans[i].x << \" \\\
+    n\"[(i + 1) == 1 << n];\n}"
   dependsOn:
   - convolution/xor_convolution.cpp
+  - modint/modint.cpp
   isVerificationFile: true
   path: test/yosupo-bitwise_xor_convolution.test.cpp
   requiredBy: []
-  timestamp: '2021-10-02 08:42:19+09:00'
+  timestamp: '2025-05-13 23:36:19+09:00'
   verificationStatus: TEST_ACCEPTED
   verifiedWith: []
 documentation_of: test/yosupo-bitwise_xor_convolution.test.cpp

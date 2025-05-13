@@ -68,8 +68,8 @@ data:
   timestamp: '2021-07-08 21:14:55+09:00'
   verificationStatus: LIBRARY_ALL_AC
   verifiedWith:
-  - test/yosupo-suffixarray.test.cpp
   - test/AOJ-ALDS1-14-D.test.cpp
+  - test/yosupo-suffixarray.test.cpp
 documentation_of: string/suffix-array.cpp
 layout: document
 redirect_from:

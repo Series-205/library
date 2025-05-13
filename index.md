@@ -28,11 +28,19 @@ data:
     - icon: ':warning:'
       path: graph/rerooting.cpp
       title: graph/rerooting.cpp
+  - name: modint
+    pages:
+    - icon: ':heavy_check_mark:'
+      path: modint/modint.cpp
+      title: modint/modint.cpp
   - name: segtree
     pages:
     - icon: ':heavy_check_mark:'
       path: segtree/dual-segment-tree.cpp
       title: Dual-Segment-Tree
+    - icon: ':heavy_check_mark:'
+      path: segtree/dynamic-segment-tree.cpp
+      title: segtree/dynamic-segment-tree.cpp
     - icon: ':heavy_check_mark:'
       path: segtree/fenwick-tree.cpp
       title: Fenwick-Tree
@@ -98,6 +106,9 @@ data:
     - icon: ':heavy_check_mark:'
       path: test/yosupo-point-add-range-sum.test.cpp
       title: test/yosupo-point-add-range-sum.test.cpp
+    - icon: ':heavy_check_mark:'
+      path: test/yosupo-point-set-range-composite-large-array.test.cpp
+      title: test/yosupo-point-set-range-composite-large-array.test.cpp
     - icon: ':heavy_check_mark:'
       path: test/yosupo-point-set-range-composite.test.cpp
       title: test/yosupo-point-set-range-composite.test.cpp
